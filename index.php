@@ -99,6 +99,7 @@ $folder = $s3_folders[0]; // default in case anything goes wrong
 // If the instance comes up in us-west-2a it will go into single-zone mode,
 // otherwise it will use the zone (2b/2c) to choose between photo folders
 $IS_SINGLE_ZONE = ($availability_zone == 'us-west-2a') ? TRUE : FALSE;
+$id_as_decimal = -1;
 
 if ($IS_SINGLE_ZONE) {
   // Select a folder based on the instance id
@@ -169,8 +170,8 @@ print <<<END_HTML
  <p>Image folder: <span class='info'>$folder</span></p> 
  <p>DB host: <span class='info'>$db_host</span></p> 
  <p>DB time: <span class='info'>$db_time</span></p> 
+ <p>single zone? $IS_SINGLE_ZONE ($id_as_decimal)</p>
 </div>
-git!
 <div class='s3-image'>
  <img src='https://s3-$demo_region.amazonaws.com/gsfcdemo/$this_img'/>
 </div>
