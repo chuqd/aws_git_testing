@@ -170,7 +170,7 @@ print <<<END_HTML
  <p>DB host: <span class='info'>$db_host</span></p> 
  <p>DB time: <span class='info'>$db_time</span></p> 
 </div>
-
+git!
 <div class='s3-image'>
  <img src='https://s3-$demo_region.amazonaws.com/gsfcdemo/$this_img'/>
 </div>
