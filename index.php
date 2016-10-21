@@ -100,11 +100,13 @@ $folder = $s3_folders[0]; // default in case anything goes wrong
 // otherwise it will use the zone (2b/2c) to choose between photo folders
 $IS_SINGLE_ZONE = ($availability_zone == 'us-west-2b') ? TRUE : FALSE;
 $id_as_decimal = -1;
+$folder_id = -1;
 
 if ($IS_SINGLE_ZONE) {
   // Select a folder based on the instance id
   $id_as_decimal = hexdec ($sub_id);
-  $folder = $s3_folders[$id_as_decimal % (count ($folders))];
+  $folder_id = $id_as_decimal % (count ($folders));
+  $folder = $s3_folders[$folder_id];
 } else {
   // Select a folder based on the availability zone
   switch ($availability_zone) {
@@ -170,7 +172,7 @@ print <<<END_HTML
  <p>Image folder: <span class='info'>$folder</span></p> 
  <p>DB host: <span class='info'>$db_host</span></p> 
  <p>DB time: <span class='info'>$db_time</span></p> 
- <p>single zone? $IS_SINGLE_ZONE ($id_as_decimal)</p>
+ <p>single zone? $IS_SINGLE_ZONE ($id_as_decimal) $folder_id</p>
 </div>
 <div class='s3-image'>
  <img src='https://s3-$demo_region.amazonaws.com/gsfcdemo/$this_img'/>
