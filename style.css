@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #dddddd;
+}
+
+.info {
+  color: maroon;
+}
+
+.s3-image {
+  width: 600px;
+  height: 400px;
+}
+
+.s3-image img {
+  width: 100%;
+  height: auto;
+}
