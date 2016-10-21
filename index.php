@@ -105,7 +105,7 @@ $folder_id = -1;
 if ($IS_SINGLE_ZONE) {
   // Select a folder based on the instance id
   $id_as_decimal = hexdec ($sub_id);
-  $folder_id = $id_as_decimal % (count ($folders));
+  $folder_id = $id_as_decimal % (count ($s3_folders));
   $folder = $s3_folders[$folder_id];
 } else {
   // Select a folder based on the availability zone
