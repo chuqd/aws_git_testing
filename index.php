@@ -172,7 +172,6 @@ print <<<END_HTML
  <p>Image folder: <span class='info'>$folder</span></p> 
  <p>DB host: <span class='info'>$db_host</span></p> 
  <p>DB time: <span class='info'>$db_time</span></p> 
- <p>single zone? $IS_SINGLE_ZONE ($id_as_decimal) $folder_id</p>
 </div>
 <div class='s3-image'>
  <img src='https://s3-$demo_region.amazonaws.com/gsfcdemo/$this_img'/>
